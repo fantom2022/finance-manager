@@ -1,0 +1,25 @@
+server:
+  port: 8181
+spring:
+  config:
+    import:
+      - bot-config.yml
+  datasource:
+    url: jdbc:postgresql://localhost:5432/telegram?currentSchema=account
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+
+#bot:
+#  coffee:
+#    name: "MenuBot"
+#    token: "5328379425:AAEb_Ode9Br9F1AIKrTBJufSaFPv2swfV2k"
+#  accounting:
+#    name: "AccountingBot"
+#    token: "6242384835:AAHnfFXkOCvbaIOAt_oCAWyTKJFoQPLxiv8"
