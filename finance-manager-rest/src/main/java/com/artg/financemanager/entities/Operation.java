@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -17,5 +19,5 @@ public class Operation {
     private Long id;
     @Enumerated(EnumType.STRING)
     private OperationDirectionEnum direction;
-    private Double price;
+    private BigDecimal price;
 }

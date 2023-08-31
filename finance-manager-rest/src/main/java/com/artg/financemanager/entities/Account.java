@@ -7,7 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
@@ -24,15 +25,15 @@ public class Account {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "account_id")
-    private List<Operation> operationList;
+    private Set<Operation> operations = new HashSet<>();
 
 
     public void addOperation(Operation operation) {
-        this.operationList.add(operation);
+        this.operations.add(operation);
     }
 
     public void removeOperation(Operation operation) {
-        this.operationList.remove(operation);
+        this.operations.remove(operation);
     }
 
     public Account(AccountDto dto) {

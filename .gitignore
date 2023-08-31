@@ -3,3 +3,5 @@
 .idea
 .mvn
 /src/main/resources/bot-config.yml
+.node_modules
+.vscode
